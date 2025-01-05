@@ -31,6 +31,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.Resources;
 import org.apache.commons.codec.language.bm.Languages.LanguageSet;
 
@@ -138,6 +139,7 @@ public class Rule {
             return Collections.singleton(this);
         }
 
+        @SuppressFBWarnings({"EI_EXPOSE_REP", "EI_EXPOSE_REP"})
         public CharSequence getPhonemeText() {
             return this.phonemeText;
         }
@@ -196,10 +198,12 @@ public class Rule {
 
         private final List<Phoneme> phonemeList;
 
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public PhonemeList(final List<Phoneme> phonemes) {
             this.phonemeList = phonemes;
         }
 
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         @Override
         public List<Phoneme> getPhonemes() {
             return phonemeList;

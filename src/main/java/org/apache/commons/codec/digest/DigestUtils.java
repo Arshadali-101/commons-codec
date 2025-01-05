@@ -31,6 +31,7 @@ import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.binary.StringUtils;
 
@@ -1403,6 +1404,7 @@ public class DigestUtils {
      * @throws IllegalArgumentException when a {@link NoSuchAlgorithmException} is caught.
      * @since 1.11
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public DigestUtils(final String name) {
         this(getDigest(name));
     }

@@ -45,6 +45,7 @@ public class DoubleMetaphone implements StringEncoder {
         private final StringBuilder alternate = new StringBuilder(getMaxCodeLen());
         private final int maxLength;
 
+        @edu.umd.cs.findbugs.annotations.SuppressFBWarnings("EI_EXPOSE_REP2")
         public DoubleMetaphoneResult(final int maxLength) {
             this.maxLength = maxLength;
         }

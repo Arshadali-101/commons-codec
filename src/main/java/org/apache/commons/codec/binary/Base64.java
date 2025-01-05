@@ -21,6 +21,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Objects;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.CodecPolicy;
 
 /**
@@ -608,6 +609,7 @@ public class Base64 extends BaseNCodec {
      *             Thrown when the {@code lineSeparator} contains Base64 characters.
      * @since 1.4
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public Base64(final int lineLength, final byte[] lineSeparator, final boolean urlSafe) {
         this(lineLength, lineSeparator, PAD_DEFAULT, toUrlSafeEncodeTable(urlSafe), DECODING_POLICY_DEFAULT);
     }
@@ -640,6 +642,7 @@ public class Base64 extends BaseNCodec {
      *             Thrown when the {@code lineSeparator} contains Base64 characters.
      * @since 1.15
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public Base64(final int lineLength, final byte[] lineSeparator, final boolean urlSafe, final CodecPolicy decodingPolicy) {
         this(lineLength, lineSeparator, PAD_DEFAULT, toUrlSafeEncodeTable(urlSafe), decodingPolicy);
     }
@@ -664,6 +667,7 @@ public class Base64 extends BaseNCodec {
      * @param decodingPolicy The decoding policy.
      * @throws IllegalArgumentException Thrown when the {@code lineSeparator} contains Base64 characters.
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     private Base64(final int lineLength, final byte[] lineSeparator, final byte padding, final byte[] encodeTable, final CodecPolicy decodingPolicy) {
         super(BYTES_PER_UNENCODED_BLOCK, BYTES_PER_ENCODED_BLOCK, lineLength, toLength(lineSeparator), padding, decodingPolicy);
         Objects.requireNonNull(encodeTable, "encodeTable");

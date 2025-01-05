@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.MessageDigestAlgorithms;
@@ -58,6 +59,7 @@ public class Digest {
     private final String[] args;
     private final String[] inputs;
 
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     private Digest(final String[] args) {
         Objects.requireNonNull(args);
         final int argsLength = args.length;

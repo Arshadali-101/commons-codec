@@ -19,6 +19,7 @@ package org.apache.commons.codec.binary;
 
 import java.util.Objects;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.CodecPolicy;
 
 /**
@@ -332,6 +333,7 @@ public class Base32 extends BaseNCodec {
      * @throws IllegalArgumentException Thrown when the {@code lineSeparator} contains Base32 characters. Or the lineLength &gt; 0 and lineSeparator is null.
      * @since 1.15
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public Base32(final int lineLength, final byte[] lineSeparator, final boolean useHex, final byte padding, final CodecPolicy decodingPolicy) {
         this(lineLength, lineSeparator, useHex ? HEX_ENCODE_TABLE : ENCODE_TABLE, padding, decodingPolicy);
     }
@@ -353,6 +355,7 @@ public class Base32 extends BaseNCodec {
      * @param decodingPolicy The decoding policy.
      * @throws IllegalArgumentException Thrown when the {@code lineSeparator} contains Base32 characters. Or the lineLength &gt; 0 and lineSeparator is null.
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     private Base32(final int lineLength, final byte[] lineSeparator, final byte[] encodeTable, final byte padding, final CodecPolicy decodingPolicy) {
         super(BYTES_PER_UNENCODED_BLOCK, BYTES_PER_ENCODED_BLOCK, lineLength, toLength(lineSeparator), padding, decodingPolicy);
         Objects.requireNonNull(encodeTable, "encodeTable");

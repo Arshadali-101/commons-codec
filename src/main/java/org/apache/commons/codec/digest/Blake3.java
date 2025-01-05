@@ -16,6 +16,8 @@
  */
 package org.apache.commons.codec.digest;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -402,6 +404,7 @@ public final class Blake3 {
         return Blake3.initKeyedHash(key).update(data).doFinalize(OUT_LEN);
     }
 
+    @SuppressFBWarnings("ICAST_QUESTIONABLE_UNSIGNED_RIGHT_SHIFT")
     private static void packInt(final int value, final byte[] dst, final int off, final int len) {
         for (int i = 0; i < len; i++) {
             dst[off + i] = (byte) (value >>> i * Byte.SIZE);

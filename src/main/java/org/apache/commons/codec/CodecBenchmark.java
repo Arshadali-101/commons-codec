@@ -17,6 +17,7 @@
 
 package org.apache.commons.codec;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.openjdk.jmh.annotations.*;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +39,7 @@ public class CodecBenchmark {
         public byte[] data;
         public String hexData;
 
+        @SuppressFBWarnings("DMI_RANDOM_USED_ONLY_ONCE")
         @Setup(Level.Trial)
         public void setup() {
             this.data = new byte[dataSize];

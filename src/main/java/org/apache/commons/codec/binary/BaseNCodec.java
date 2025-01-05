@@ -21,6 +21,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Supplier;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.BinaryDecoder;
 import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.CodecPolicy;
@@ -127,6 +128,7 @@ public abstract class BaseNCodec implements BinaryEncoder, BinaryDecoder {
          * @param encodeTable the encode table, null resets to the default.
          * @return {@code this} instance.
          */
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public B setEncodeTable(final byte... encodeTable) {
             this.encodeTable = encodeTable != null ? encodeTable : defaultEncodeTable;
             return asThis();

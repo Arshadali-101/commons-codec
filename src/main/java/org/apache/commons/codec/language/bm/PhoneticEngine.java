@@ -31,6 +31,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.language.bm.Languages.LanguageSet;
 import org.apache.commons.codec.language.bm.Rule.Phoneme;
 
@@ -272,6 +273,7 @@ public class PhoneticEngine {
      * @param concatenate
      *            if it will concatenate multiple encodings
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public PhoneticEngine(final NameType nameType, final RuleType ruleType, final boolean concatenate) {
         this(nameType, ruleType, concatenate, DEFAULT_MAX_PHONEMES);
     }
@@ -289,6 +291,7 @@ public class PhoneticEngine {
      *            the maximum number of phonemes that will be handled
      * @since 1.7
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public PhoneticEngine(final NameType nameType, final RuleType ruleType, final boolean concatenate, final int maxPhonemes) {
         if (ruleType == RuleType.RULES) {
             throw new IllegalArgumentException("ruleType must not be " + RuleType.RULES);

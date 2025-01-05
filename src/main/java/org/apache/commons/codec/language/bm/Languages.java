@@ -26,6 +26,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.Resources;
 
 /**
@@ -280,6 +281,7 @@ public class Languages {
         this.languages = languages;
     }
 
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public Set<String> getLanguages() {
         return this.languages;
     }

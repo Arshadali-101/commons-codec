@@ -20,6 +20,7 @@ package org.apache.commons.codec.net;
 import java.nio.ByteBuffer;
 import java.util.BitSet;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.codec.BinaryDecoder;
 import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.DecoderException;
@@ -64,6 +65,7 @@ public class PercentCodec implements BinaryEncoder, BinaryDecoder {
      * while it will not encode all the US-ASCII characters, except for character '%' that is used as escape
      * character for Percent-Encoding.
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public PercentCodec() {
         this.plusForSpace = false;
         insertAlwaysEncodeChar(ESCAPE_CHAR);
@@ -77,6 +79,7 @@ public class PercentCodec implements BinaryEncoder, BinaryDecoder {
      * @param alwaysEncodeChars the unsafe characters that should always be encoded
      * @param plusForSpace      the flag defining if the space character should be encoded as '+'
      */
+    @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
     public PercentCodec(final byte[] alwaysEncodeChars, final boolean plusForSpace) {
         this.plusForSpace = plusForSpace;
         insertAlwaysEncodeChars(alwaysEncodeChars);
