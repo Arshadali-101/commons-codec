@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    image: your-dockerhub-username/project-name:latest
+    container_name: my-java-app
+    ports:
+      - "8080:8080" # Map container port 8080 to host port 8080
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx1024m # Example environment variables
+    restart: always
