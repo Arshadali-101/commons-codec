@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy the packaged JAR file into the container
 COPY target/commons-codec.jar app.jar
 
-# Expose the port your application uses (if applicable)
+# Expose the port  of your application uses (if applicable)
 # EXPOSE 8080 # Uncomment and adjust if your application listens on a specific port
 
 # Set the command to run your application
