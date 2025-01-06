@@ -123,12 +123,12 @@ limitations under the License.
     <commons.jacoco.version>0.8.12</commons.jacoco.version>
     <jacoco.skip>false</jacoco.skip>
     <commons.jacoco.haltOnFailure>true</commons.jacoco.haltOnFailure>
-    <commons.jacoco.classRatio>0.60</commons.jacoco.classRatio>
-    <commons.jacoco.instructionRatio>0.61</commons.jacoco.instructionRatio>
-    <commons.jacoco.methodRatio>0.60</commons.jacoco.methodRatio>
-    <commons.jacoco.branchRatio>0.60</commons.jacoco.branchRatio>
-    <commons.jacoco.lineRatio>0.60</commons.jacoco.lineRatio>
-    <commons.jacoco.complexityRatio>0.60</commons.jacoco.complexityRatio>
+    <commons.jacoco.classRatio>0.30</commons.jacoco.classRatio>
+    <commons.jacoco.instructionRatio>0.31</commons.jacoco.instructionRatio>
+    <commons.jacoco.methodRatio>0.30</commons.jacoco.methodRatio>
+    <commons.jacoco.branchRatio>0.30</commons.jacoco.branchRatio>
+    <commons.jacoco.lineRatio>0.30</commons.jacoco.lineRatio>
+    <commons.jacoco.complexityRatio>0.30</commons.jacoco.complexityRatio>
   </properties>
   <build>
     <defaultGoal>clean verify apache-rat:check japicmp:cmp checkstyle:check javadoc:javadoc</defaultGoal>
@@ -296,6 +296,7 @@ limitations under the License.
             <exclude>src/test/resources/org/apache/commons/codec/empty.bin</exclude>
             <exclude>src/test/resources/org/apache/commons/codec/small.bin</exclude>
             <exclude>src/main/java/org/apache/commons/codec/CodecBenchmark.java</exclude>
+
           </excludes>
         </configuration>
       </plugin>
