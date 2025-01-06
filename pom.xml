@@ -63,6 +63,13 @@ limitations under the License.
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.randoop</groupId>
+      <artifactId>randoop-all</artifactId>
+      <version>4.3.3</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/target/randoop-all-4.3.3.jar</systemPath>
+    </dependency>
 
 
     <dependency>
@@ -76,6 +83,8 @@ limitations under the License.
       <artifactId>commons-codec</artifactId>
       <version>1.16.0</version>
     </dependency>
+
+
 
 
     <dependency>
@@ -144,6 +153,23 @@ limitations under the License.
             </excludes>
           </configuration>
         </plugin>
+
+        <plugin>
+          <groupId>org.randoop</groupId>
+          <artifactId>randoop-maven-plugin</artifactId>
+          <version>4.3.3</version> <!-- Ensure this version matches the one above -->
+          <executions>
+            <execution>
+              <goals>
+                <goal>gentests</goal> <!-- Goal to generate tests -->
+              </goals>
+              <phase>verify</phase> <!-- You can choose the phase to run it (e.g., compile, verify) -->
+            </execution>
+          </executions>
+
+        </plugin>
+
+
 
         <plugin>
           <groupId>org.pitest</groupId>
