@@ -69,7 +69,7 @@ limitations under the License.
       <artifactId>randoop-all</artifactId>
       <version>4.3.2</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/lib/randoop-all-4.3.2.jar</systemPath>
+      <systemPath>C:\Users\arsha\IdeaProjects\commons-codec\lib\randoop-all-4.3.2.jar</systemPath>
     </dependency>
 
 
